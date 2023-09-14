@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: common-service
+  name: mok
 spec:
   finalizers:
   - kubernetes

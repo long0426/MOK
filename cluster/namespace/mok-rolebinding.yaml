@@ -1,8 +1,8 @@
 apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:
-  name: common-service-role-binding
-  namespace: common-service
+  name: mok-role-binding
+  namespace: mok
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
