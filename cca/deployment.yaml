@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+  labels:
+    app: cca
+    app.kubernetes.io/component: web
+    app.kubernetes.io/instance: cca
+    app.kubernetes.io/name: cca
+    app.openshift.io/runtime: java
+  name: cca
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: cca
+  template:
+    metadata:
+      labels:
+        app: cca
+    spec:
+      containers:
+      - name: cca
+        imagePullPolicy: Always
+        image: image-registry.openshift-image-registry.svc:5000/mok/cca:init
+        ports:
+        - containerPort: 8088
+          protocol: TCP

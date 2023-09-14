@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+  labels:
+    app: cpa
+    app.kubernetes.io/component: web
+    app.kubernetes.io/instance: cpa
+    app.kubernetes.io/name: cpa
+    app.openshift.io/runtime: java
+  name: cpa
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: cpa
+  template:
+    metadata:
+      labels:
+        app: cpa
+    spec:
+      containers:
+      - name: cpa
+        imagePullPolicy: Always
+        image: image-registry.openshift-image-registry.svc:5000/mok/cpa:init
+        ports:
+        - containerPort: 8381
+          protocol: TCP

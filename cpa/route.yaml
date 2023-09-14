@@ -1,0 +1,13 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  labels:
+    app: cpa
+  name: cpa
+spec:
+  port:
+    targetPort: 8381-tcp
+  to:
+    kind: Service
+    name: cpa
+    weight: 100

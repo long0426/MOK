@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: cca
+  name: cca
+spec:
+  ports:
+  - name: 8088-tcp
+    port: 8088
+    protocol: TCP
+    targetPort: 8088
+  selector:
+    app: cca
+  sessionAffinity: None
+  type: ClusterIP
