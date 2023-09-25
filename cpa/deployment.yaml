@@ -22,7 +22,7 @@ spec:
       containers:
       - name: cpa
         imagePullPolicy: Always
-        image: image-registry.openshift-image-registry.svc:5000/mok/cpa:c082df6f4d9595196e310e2be9d4b62cff77a973
+        image: image-registry.openshift-image-registry.svc:5000/mok/cpa:77139f4d0e25b9f938614f64bf0157da20b087c6
         ports:
         - containerPort: 8381
           protocol: TCP
